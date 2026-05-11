@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e0537fc418569ed3262d7c408bf9d6b1 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_e0537fc418569ed3262d7c408bf9d6b1" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_e0537fc418569ed3262d7c408bf9d6b1 = L.map(
+                "map_e0537fc418569ed3262d7c408bf9d6b1",
+                {
+                    center: [4.591666666666667, -74.07083333333333],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_43e882290981f54c60489a6151c99a8f = L.tileLayer(
+                "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+                {
+  "minZoom": 0,
+  "maxZoom": 18,
+  "maxNativeZoom": 18,
+  "noWrap": false,
+  "attribution": "Esri World Imagery",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_43e882290981f54c60489a6151c99a8f.addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+            var polygon_f1c96a1f8859db6b06ab2428e091f05d = L.polygon(
+                [[4.6, -74.08333333333333], [4.6, -74.05833333333334], [4.583333333333333, -74.05833333333334], [4.583333333333333, -74.08333333333333], [4.6, -74.08333333333333]],
+                {"bubblingMouseEvents": true, "color": "purple", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "purple", "fillOpacity": 0.25, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 4}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+        var popup_fe451f2d0b3b1a4df0c3f1d53044e864 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afdfe7f48ff5f37b4ad47a75ee091b7f = $(`<div id="html_afdfe7f48ff5f37b4ad47a75ee091b7f" style="width: 100.0%; height: 100.0%;">Área = 5163392.666 m²</div>`)[0];
+                popup_fe451f2d0b3b1a4df0c3f1d53044e864.setContent(html_afdfe7f48ff5f37b4ad47a75ee091b7f);
+            
+        
+
+        polygon_f1c96a1f8859db6b06ab2428e091f05d.bindPopup(popup_fe451f2d0b3b1a4df0c3f1d53044e864)
+        ;
+
+        
+    
+    
+            var poly_line_aaa542da88b34e263fc6a62342f8cf63 = L.polyline(
+                [[4.6, -74.08333333333333], [4.6, -74.05833333333334], [4.583333333333333, -74.05833333333334], [4.583333333333333, -74.08333333333333], [4.6, -74.08333333333333]],
+                {"bubblingMouseEvents": true, "color": "yellow", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "yellow", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 1.0, "smoothFactor": 1.0, "stroke": true, "weight": 3}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+            var marker_5a70dfca4c457e9becd08f9169d81961 = L.marker(
+                [4.6, -74.08333333333333],
+                {
+}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+            var icon_39d40d6e3bace6e2d6e84d941bf20b08 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ddee4e196eaad89536f8ec6005a0171b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5c0ebd279932dd130633cc3d9bcac4bb = $(`<div id="html_5c0ebd279932dd130633cc3d9bcac4bb" style="width: 100.0%; height: 100.0%;">             Punto A<br>             Latitud = 4.60000000<br>             Longitud = -74.08333333             </div>`)[0];
+                popup_ddee4e196eaad89536f8ec6005a0171b.setContent(html_5c0ebd279932dd130633cc3d9bcac4bb);
+            
+        
+
+        marker_5a70dfca4c457e9becd08f9169d81961.bindPopup(popup_ddee4e196eaad89536f8ec6005a0171b)
+        ;
+
+        
+    
+    
+            marker_5a70dfca4c457e9becd08f9169d81961.bindTooltip(
+                `<div>
+                     Punto A
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5a70dfca4c457e9becd08f9169d81961.setIcon(icon_39d40d6e3bace6e2d6e84d941bf20b08);
+            
+    
+            var marker_28af7b8e28116a507152e89cec2d089e = L.marker(
+                [4.6, -74.05833333333334],
+                {
+}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+            var icon_9a435d8dbac513ecb066ee4494afead6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_de7622e15faea9d5b42077ef39c38a05 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0619a2d0756cb2cf52468128026145a9 = $(`<div id="html_0619a2d0756cb2cf52468128026145a9" style="width: 100.0%; height: 100.0%;">             Punto B<br>             Latitud = 4.60000000<br>             Longitud = -74.05833333             </div>`)[0];
+                popup_de7622e15faea9d5b42077ef39c38a05.setContent(html_0619a2d0756cb2cf52468128026145a9);
+            
+        
+
+        marker_28af7b8e28116a507152e89cec2d089e.bindPopup(popup_de7622e15faea9d5b42077ef39c38a05)
+        ;
+
+        
+    
+    
+            marker_28af7b8e28116a507152e89cec2d089e.bindTooltip(
+                `<div>
+                     Punto B
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_28af7b8e28116a507152e89cec2d089e.setIcon(icon_9a435d8dbac513ecb066ee4494afead6);
+            
+    
+            var marker_1724023cd35bf92d55356eebc4b20bb5 = L.marker(
+                [4.583333333333333, -74.05833333333334],
+                {
+}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+            var icon_a10e3da1c92e943781525da18cc576ae = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1e404052827e932fba06458e7882ea33 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_69ef6a68487bf914a6fc0462674dbd71 = $(`<div id="html_69ef6a68487bf914a6fc0462674dbd71" style="width: 100.0%; height: 100.0%;">             Punto C<br>             Latitud = 4.58333333<br>             Longitud = -74.05833333             </div>`)[0];
+                popup_1e404052827e932fba06458e7882ea33.setContent(html_69ef6a68487bf914a6fc0462674dbd71);
+            
+        
+
+        marker_1724023cd35bf92d55356eebc4b20bb5.bindPopup(popup_1e404052827e932fba06458e7882ea33)
+        ;
+
+        
+    
+    
+            marker_1724023cd35bf92d55356eebc4b20bb5.bindTooltip(
+                `<div>
+                     Punto C
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1724023cd35bf92d55356eebc4b20bb5.setIcon(icon_a10e3da1c92e943781525da18cc576ae);
+            
+    
+            var marker_552cd3385b5a604a029c2737fedafa88 = L.marker(
+                [4.583333333333333, -74.08333333333333],
+                {
+}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+            var icon_5a90dafc4425d026ea3963b6761931ac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_000d2715e2c7b777cee0fdf44d1167fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b545032b29b44c8388cce844214e0b0b = $(`<div id="html_b545032b29b44c8388cce844214e0b0b" style="width: 100.0%; height: 100.0%;">             Punto D<br>             Latitud = 4.58333333<br>             Longitud = -74.08333333             </div>`)[0];
+                popup_000d2715e2c7b777cee0fdf44d1167fb.setContent(html_b545032b29b44c8388cce844214e0b0b);
+            
+        
+
+        marker_552cd3385b5a604a029c2737fedafa88.bindPopup(popup_000d2715e2c7b777cee0fdf44d1167fb)
+        ;
+
+        
+    
+    
+            marker_552cd3385b5a604a029c2737fedafa88.bindTooltip(
+                `<div>
+                     Punto D
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_552cd3385b5a604a029c2737fedafa88.setIcon(icon_5a90dafc4425d026ea3963b6761931ac);
+            
+    
+            var marker_442cff24074c2e2c0ff5c5d3733ecd87 = L.marker(
+                [4.591666666666667, -74.07083333333333],
+                {
+}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+        
+    
+            var icon_ffcf5db8e31e37f45939e1b4c6cc79e8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9ae70e8e14476fe23571b965edd2c83a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b80f3d01f3b0042177471fc5777df75b = $(`<div id="html_b80f3d01f3b0042177471fc5777df75b" style="width: 100.0%; height: 100.0%;">Área = 5163392.666 m²</div>`)[0];
+                popup_9ae70e8e14476fe23571b965edd2c83a.setContent(html_b80f3d01f3b0042177471fc5777df75b);
+            
+        
+
+        marker_442cff24074c2e2c0ff5c5d3733ecd87.bindPopup(popup_9ae70e8e14476fe23571b965edd2c83a)
+        ;
+
+        
+    
+    
+            marker_442cff24074c2e2c0ff5c5d3733ecd87.bindTooltip(
+                `<div>
+                     Área
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_442cff24074c2e2c0ff5c5d3733ecd87.setIcon(icon_ffcf5db8e31e37f45939e1b4c6cc79e8);
+            
+    
+            var layer_control_7f21b1eb0b44003eea902ac7d0dedee0_layers = {
+                base_layers : {
+                    "Imagen Satelital" : tile_layer_43e882290981f54c60489a6151c99a8f,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_7f21b1eb0b44003eea902ac7d0dedee0 = L.control.layers(
+                layer_control_7f21b1eb0b44003eea902ac7d0dedee0_layers.base_layers,
+                layer_control_7f21b1eb0b44003eea902ac7d0dedee0_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_e0537fc418569ed3262d7c408bf9d6b1);
+
+        
+</script>
+</html>
