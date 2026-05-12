@@ -51,7 +51,7 @@ def plot_visible_curve(ax, x, y, z, color):
 # =========================================================
 while True:
     try:
-        phi_deg = float(input("Ingrese latitud φ (-999 para salir): "))
+        phi_deg = float(input("Ingrese latitud φ: "))
         if phi_deg == -999:
             break
 
