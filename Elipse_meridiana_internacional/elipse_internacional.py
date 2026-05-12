@@ -3,16 +3,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-# =========================================================
+
 # ELIPSOIDE INTERNACIONAL
-# =========================================================
+
 a = 6378388.0
 f = 1 / 297
 b = a * (1 - f)
 e2 = 2 * f - f**2
 e = math.sqrt(e2)
 
-# =========================================================
+
 def elipse_meridiana(phi_deg):
     phi = math.radians(phi_deg)
     N = a / math.sqrt(1 - e2 * math.sin(phi)**2)
@@ -23,7 +23,7 @@ def elipse_meridiana(phi_deg):
 
     return phi, N, x, y, z
 
-# =========================================================
+
 def plot_visible_curve(ax, x, y, z, color):
     elev = math.radians(20)
     azim = math.radians(-55)
@@ -48,7 +48,7 @@ def plot_visible_curve(ax, x, y, z, color):
             ax.plot(x[start:end], y[start:end], z[start:end], color=color)
             start = None
 
-# =========================================================
+
 while True:
     try:
         phi_deg = float(input("Ingrese latitud φ: "))
@@ -68,9 +68,9 @@ while True:
 
         fig = plt.figure(figsize=(16,9), facecolor="#0b1c3d")
 
-        # =====================================================
+        
         # PANEL IZQUIERDO (ORDENADO)
-        # =====================================================
+        
         panel = fig.add_axes([0.03,0.05,0.30,0.9])
         panel.set_facecolor("#102a54")
         panel.set_xticks([])
@@ -80,17 +80,17 @@ while True:
         panel.text(0.05,0.95,"ELIPSE MERIDIANA\n(SISTEMA INTERNACIONAL)",
                    color="white", fontsize=18, fontweight="bold")
 
-        # -----------------------------
+        
         # DATO DE ENTRADA
-        # -----------------------------
+        
         panel.text(0.05,0.80,"DATO DE ENTRADA", color="#00e5ff", fontsize=14)
 
         panel.text(0.05,0.74,f"φ = {phi_deg:.6f}°", color="yellow", fontsize=13)
         panel.text(0.05,0.70,f"φ = {phi_rad:.6f} rad", color="white", fontsize=13)
 
-        # -----------------------------
+        
         # RESULTADOS (BIEN SEPARADO)
-        # -----------------------------
+        
         panel.text(0.05,0.60,"RESULTADOS", color="#00e5ff", fontsize=14)
 
         panel.text(0.05,0.54,f"N = {N:.3f} m", color="white", fontsize=12)
@@ -98,9 +98,9 @@ while True:
         panel.text(0.05,0.46,f"y = {y_p:.3f} m", color="white", fontsize=12)
         panel.text(0.05,0.42,f"z = {z_p:.3f} m", color="white", fontsize=12)
 
-        # -----------------------------
+        
         # PARAMETROS (MAS ABAJO)
-        # -----------------------------
+        
         panel.text(0.05,0.30,"PARÁMETROS", color="#00e5ff", fontsize=14)
 
         panel.text(0.05,0.24,f"a = {a:.3f} m", color="white", fontsize=12)
@@ -109,9 +109,9 @@ while True:
         panel.text(0.05,0.12,f"e² = {e2:.10f}", color="white", fontsize=12)
         panel.text(0.05,0.08,f"e = {e:.10f}", color="white", fontsize=12)
 
-        # =====================================================
+        
         # GRAFICA DERECHA
-        # =====================================================
+        
         ax = fig.add_axes([0.38,0.1,0.55,0.8], projection='3d')
         ax.plot_surface(X,Y,Z, alpha=0.6)
 
@@ -142,9 +142,9 @@ while True:
 
         ax.scatter(x_p,y_p,z_p,color="red",s=80)
 
-        # =====================================================
+       
         # CONVENCIONES (AL LADO DERECHO)
-        # =====================================================
+        
         conv = fig.add_axes([0.82,0.15,0.15,0.2])
         conv.set_xticks([])
         conv.set_yticks([])

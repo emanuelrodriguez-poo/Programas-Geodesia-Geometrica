@@ -3,18 +3,18 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-# =========================================================
+
 # CONSTANTES ELIPSOIDE INTERNACIONAL
-# =========================================================
+
 a = 6378388.0
 f = 1 / 297
 b = a * (1 - f)
 e2 = 2 * f - f**2
 e = math.sqrt(e2)
 
-# =========================================================
+
 # FUNCION PRINCIPAL
-# =========================================================
+
 def geodesicas_a_rectangulares(phi_deg, lambda_deg, h):
     phi = math.radians(phi_deg)
     lamb = math.radians(lambda_deg)
@@ -53,15 +53,15 @@ def plot_visible_curve(ax, x, y, z, color):
             start = None
 
 
-# =========================================================
+
 # LOOP
-# =========================================================
+
 while True:
     try:
         print("\nELIPSOIDE (Sistema Internacional)")
         print("-----------------------------------")
 
-        phi_deg = float(input("Ingrese latitud φ (-999 para salir): "))
+        phi_deg = float(input("Ingrese latitud φ: "))
         if phi_deg == -999:
             break
 
@@ -140,9 +140,9 @@ while True:
         ax.set_zlabel("Z (m)", color="white")
         ax.tick_params(colors='white')
 
-        # =====================================================
+        
         # PANEL DERECHO (AJUSTE FINAL PERFECTO)
-        # =====================================================
+       
         panel = fig.add_axes([0.67, 0.08, 0.30, 0.85])
         panel.set_facecolor("#0b1e3a")
         panel.set_xticks([])
