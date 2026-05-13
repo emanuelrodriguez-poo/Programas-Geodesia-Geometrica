@@ -5,9 +5,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import folium
 
-# =========================================================
+
 # FUNCIONES
-# =========================================================
+
 
 def seleccionar_elipsoide():
 
@@ -114,9 +114,9 @@ def leer_longitud(nombre):
     return valor, texto
 
 
-# =========================================================
+
 # CÁLCULO DE ÁREA
-# =========================================================
+
 
 def calcular_area_cuadrilatero(
     latA, lonA,
@@ -157,9 +157,8 @@ def calcular_area_cuadrilatero(
     }
 
 
-# =========================================================
+
 # MAPA
-# =========================================================
 
 def generar_mapa_area(
     latA, lonA,
@@ -276,9 +275,8 @@ def generar_mapa_area(
     print(f"\nMapa generado: {ruta}")
 
 
-# =========================================================
+
 # LOOP PRINCIPAL
-# =========================================================
 
 while True:
 
@@ -296,37 +294,37 @@ while True:
             print("Programa finalizado.")
             break
 
-        # =====================================
+        
         # PUNTO A
-        # =====================================
+        
 
         latA, latA_txt = leer_latitud("A")
         lonA, lonA_txt = leer_longitud("A")
 
-        # =====================================
+        
         # PUNTO B
-        # =====================================
+        
 
         latB, latB_txt = leer_latitud("B")
         lonB, lonB_txt = leer_longitud("B")
 
-        # =====================================
+        
         # PUNTO C
-        # =====================================
+        
 
         latC, latC_txt = leer_latitud("C")
         lonC, lonC_txt = leer_longitud("C")
 
-        # =====================================
+        
         # PUNTO D
-        # =====================================
+        
 
         latD, latD_txt = leer_latitud("D")
         lonD, lonD_txt = leer_longitud("D")
 
-        # =====================================
+        
         # CÁLCULO DE ÁREA
-        # =====================================
+        
 
         resultado = calcular_area_cuadrilatero(
 
@@ -341,9 +339,9 @@ while True:
         area = resultado["area"]
         area_km2 = resultado["area_km2"]
 
-        # =====================================
+        
         # SALIDA
-        # =====================================
+        
 
         print("\nRESULTADOS")
         print("--------------------------")
@@ -351,9 +349,9 @@ while True:
         print(f"Área = {area:.3f} m²")
         print(f"Área = {area_km2:.3f} km²")
 
-        # =====================================
+        
         # MAPA
-        # =====================================
+        
 
         generar_mapa_area(
 
@@ -365,9 +363,9 @@ while True:
 
         )
 
-        # =====================================
+        
         # FIGURA SIMPLE
-        # =====================================
+        
 
         fig = plt.figure(figsize=(10, 8))
 
