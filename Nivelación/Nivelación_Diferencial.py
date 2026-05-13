@@ -5,9 +5,8 @@ import folium
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D
 
-# =========================================================
+
 # FUNCIONES
-# =========================================================
 
 def promedio(lista):
     return sum(lista) / len(lista)
@@ -45,9 +44,8 @@ def leer_coordenada(nombre):
     return gms_a_decimal(grados, minutos, segundos)
 
 
-# =========================================================
+
 # MAPA SATELITAL
-# =========================================================
 
 def mostrar_mapa_satelital(puntos):
 
@@ -125,9 +123,8 @@ def mostrar_mapa_satelital(puntos):
     webbrowser.open("file://" + ruta_archivo)
 
 
-# =========================================================
+
 # PROGRAMA PRINCIPAL
-# =========================================================
 
 while True:
 
@@ -136,7 +133,6 @@ while True:
         print("\nPROGRAMA 5 - NIVELACIÓN GEODÉSICA")
         print("---------------------------------")
         print("Cálculo por altura instrumental, subes y bajas, perfil y mapa.")
-        print("Para salir escriba -999 como cota inicial.\n")
 
         cota_inicial = float(input("Ingrese cota conocida inicial: "))
 
@@ -170,10 +166,9 @@ while True:
 
         distancia_acumulada = 0.0
 
-        # =====================================================
+        
         # PUNTO INICIAL
-        # =====================================================
-
+        
         puntos_mapa.append({
 
             "nombre": nombre_inicial,
@@ -202,10 +197,9 @@ while True:
 
         })
 
-        # =====================================================
+        
         # ESTACIONES
-        # =====================================================
-
+        
         for i in range(numero_estaciones):
 
             print(f"\n========== ESTACIÓN / ARMADO {i + 1} ==========")
@@ -214,9 +208,9 @@ while True:
 
             punto_visado = input("Punto visado (O): ")
 
-            # =================================================
+           
             # V+
-            # =================================================
+            
 
             n_vmas = int(input("Cantidad de lecturas V+: "))
 
@@ -230,9 +224,9 @@ while True:
 
             v_mas = promedio(lecturas_vmas)
 
-            # =================================================
+            
             # V-
-            # =================================================
+            
 
             n_vmenos = int(input("Cantidad de lecturas V-: "))
 
@@ -246,10 +240,9 @@ while True:
 
             v_menos = promedio(lecturas_vmenos)
 
-            # =================================================
+            
             # DISTANCIAS
-            # =================================================
-
+            
             n_dist = int(input("Cantidad de distancias medidas: "))
 
             distancias = []
@@ -264,9 +257,9 @@ while True:
 
             distancia_acumulada += distancia_prom
 
-            # =================================================
+            
             # COORDENADAS
-            # =================================================
+            
 
             print(f"\nCoordenadas geodésicas de {punto_visado}")
 
@@ -276,9 +269,9 @@ while True:
 
             h = float(input("Altura elipsoidal h: "))
 
-            # =================================================
+            
             # CALCULOS
-            # =================================================
+            
 
             cota_hi = cota_referencia + v_mas
 
@@ -351,10 +344,9 @@ while True:
 
             cota_referencia = cota_punto
 
-        # =====================================================
+        
         # RESULTADOS
-        # =====================================================
-
+        
         cota_final = registros[-1]["cota"]
 
         suma_sube = sum(r["sube"] for r in registros)
@@ -363,15 +355,15 @@ while True:
 
         diferencia_total = cota_final - cota_inicial
 
-        # =====================================================
+        
         # MAPA SATELITAL
-        # =====================================================
+        
 
         mostrar_mapa_satelital(puntos_mapa)
 
-        # =====================================================
+        
         # DATOS GRAFICAS
-        # =====================================================
+        
 
         nombres = [p["nombre"] for p in puntos_perfil]
 
@@ -386,19 +378,17 @@ while True:
             for i in range(len(distancias_plot))
         ]
 
-        # =====================================================
+        
         # FIGURA GENERAL
-        # =====================================================
-
+        
         fig = plt.figure(
             figsize=(16, 9),
             facecolor="#061726"
         )
 
-        # =====================================================
+        
         # TITULO GENERAL
-        # =====================================================
-
+        
         fig.suptitle(
             "NIVELACIÓN GEODÉSICA",
             fontsize=30,
@@ -407,9 +397,9 @@ while True:
             y=0.965
         )
 
-        # =====================================================
+        
         # PANEL DERECHO
-        # =====================================================
+        
 
         panel = fig.add_axes([0.76, 0.08, 0.22, 0.84])
 
@@ -429,10 +419,9 @@ while True:
 
             spine.set_linewidth(2)
 
-        # =====================================================
+        
         # TITULO PANEL
-        # =====================================================
-
+        
         panel.text(
             0.05,
             0.93,
@@ -442,10 +431,9 @@ while True:
             fontweight="bold"
         )
 
-        # =====================================================
+        
         # DATOS GENERALES
-        # =====================================================
-
+        
         panel.text(
             0.05,
             0.82,
@@ -491,9 +479,9 @@ while True:
             family="monospace"
         )
 
-        # =====================================================
+        
         # LINEA DIVISORIA
-        # =====================================================
+        
 
         panel.plot(
             [0.05, 0.95],
@@ -502,10 +490,9 @@ while True:
             linewidth=1.5
         )
 
-        # =====================================================
+        
         # RESULTADOS
-        # =====================================================
-
+        
         panel.text(
             0.05,
             0.40,
@@ -560,9 +547,9 @@ while True:
             family="monospace"
         )
 
-        # =====================================================
+        
         # PERFIL
-        # =====================================================
+        
 
         ax_perfil = fig.add_axes([0.05, 0.67, 0.66, 0.22])
 
@@ -611,9 +598,9 @@ while True:
 
         ax_perfil.grid(True, linestyle="--", alpha=0.5)
 
-        # =====================================================
+        
         # MAPA 3D
-        # =====================================================
+        
 
         ax_mapa = fig.add_axes(
             [0.05, 0.18, 0.50, 0.38],
@@ -680,10 +667,9 @@ while True:
 
         ax_mapa.grid(True)
 
-        # =====================================================
+        
         # CONVENCIONES
-        # =====================================================
-
+        
         conv_panel = fig.add_axes([0.57, 0.24, 0.14, 0.17])
 
         conv_panel.set_facecolor("#0b2238")
@@ -748,10 +734,9 @@ while True:
             labelcolor="white"
         )
 
-        # =====================================================
+        
         # FOOTER
-        # =====================================================
-
+        
         footer = fig.add_axes([0.02, 0.01, 0.96, 0.04])
 
         footer.set_facecolor("#08233a")
